@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <h1>Sasquatch Websighting</h1>
+            <div class="nav-right">
+                <h2>{{user.first_name}} {{user.last_name}}</h2>
+                <a href="/create/sighting" class="btn btn-outline-primary">Report a Sighting</a>
+                <a href="/logout" class="btn btn-outline-primary">logout</a> 
+            </div>
+        </nav>
+        <div class="content" add style="overflow-y:scroll;">
+            {% for s in sighting %}
+            <div class="list-group dashboard">
+                <p>Sightings:
+                    <p>{{users|length}}</p>
+                </p>
+                <p>{{s.location}} {{s.date_seen}} </p>
+                <p>Reported by: {{s.Creator}}</p>
+                <a href="/view/sighting/{{s.id}}" class="btn btn-outline-primary">View</a>
+                {% if s.user_id == user.id %}
+                <a href="/edit/sighting/{{s.id}}" class="btn btn-outline-primary">Edit</a>
+                <a href="/delete/sighting/{{s.id}}" class="btn btn-outline-primary">Delete</a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

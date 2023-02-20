@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.flex-sm-column{
+    display: flex;
+    margin: 0 auto;
+    width: 400px;
+    background-color: #33393E;
+    margin-top: 20px;
+}
+h1, label, h4{
+    color: goldenrod;
+}
+.button:hover {
+    background-color:green;
+    transition: 0.5s;
+}
+.button1:hover {
+    background-color:red;
+    transition: 0.5s;
+}
+h2{
+    color: blue;
+}
+
+.test{
+    overflow-wrap: anywhere;
+}
+

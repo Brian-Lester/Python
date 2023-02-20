@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 auto;
+            max-width: 1270px;
+            max-height: fit-content;
+        }
+        .boxes {
+            margin: 20px;
+            border-radius: 10px;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            /* margin: 0 auto; */
+            background-color: #9FC5F8;
+        }
+        .testing{
+            background-color: {{color}};
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <div class="container">
+        {%if color == 'color'%} class = 'testing' {%endif%} 
+        {% for i in range(0, num)%}
+        <div class="boxes testing">
+        </div>
+        {%endfor%}
+    </div>
+</body>
+</html>

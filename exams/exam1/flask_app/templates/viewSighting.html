@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <h1>Sasquatch Websighting</h1>
+            <div class="nav-right">
+                <h2>{{user.first_name}} {{user.last_name}}</h2>
+                <a href="/dashboard" class="btn btn-outline-primary">Dashboard</a>
+                <a href="/logout" class="btn btn-outline-primary">logout</a> 
+            </div>
+        </nav>
+
+        <div class="content dashboard" >
+            <h2>{{s.location}} on {{s.date_seen}}</h2>
+            <div class="row" >
+                <div class="col-md-6">What Happend:</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">{{s.description}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"># of Sasquatches:</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">{{s.how_many}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">Reported By: {{s.Creator_first}} {{s.Creator_last}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">Skeptics: </div>
+            </div>
+            {% for i in test.users %}
+            <div class="row">
+                <div class="col-md-1">{{i.first_name}} {{i.last_name}} </div>
+            </div>
+            {% endfor %}
+            {% for i in test.users %}
+            <div class="row">
+                {% if i.id == user.id  %}
+                <a href="/delete/relationship/{{s.id}}/{{user.id}}" class="btn btn-outline-primary">Doubt it {{i.id}} {{user.id}}</a> 
+                
+                {% else  %}
+                <a href="/create/relationship/{{s.id}}" class="btn btn-outline-primary">Belive it {{i.id}} {{user.id}}</a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
+

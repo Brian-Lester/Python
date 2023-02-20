@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+</head>
+<body>
+    <h1>COUNTER</h1>
+    <p>{{count}}</p>
+    <a href="/destroy">start over</a>
+    <a href="/plus2">PLUS 2</a>
+    <form action="/plusnum" method="POST">
+        {% csrf_token %}
+        <label for="plusnum">How many would you like to add?</label>
+        <input type="number" name ='plusnum'>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

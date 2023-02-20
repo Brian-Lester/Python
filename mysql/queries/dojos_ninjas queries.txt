@@ -1,0 +1,10 @@
+INSERT into dojos (name) VALUES ("NYC"),("PHILA"),("ROCHESTER");
+DELETE FROM dojos where id >=1;
+INSERT into dojos (name) VALUES ("NYC"),("PHILA"),("ROCHESTER");
+INSERT into ninjas (first_name, last_name, dojo_id) 
+VALUES("Brian", 'Lester', 4), ("Megan", 'Lester', 4),("Annabel", 'Lester', 4),
+('Spongebob', 'Squarepants', 5), ('Patrick', 'Star', 5), ('Squidward', 'Tentacles', 5),
+('Goku', 'Son', 6), ('Gohan', 'Son', 6), ("Goten", 'Son', 6);
+SELECT * FROM ninjas WHERE dojo_id = 4;
+SELECT * FROM ninjas WHERE dojo_id = 6;
+SELECT dojo_id FROM ninjas WHERE id =36;

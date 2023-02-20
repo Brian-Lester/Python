@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkerboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .color3{
+    background-color: {{color3}};
+}
+
+.color4{
+    background-color: {{color4}};
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            {%for i in range(num1)%}
+            <tr>
+                {%if color4 == 'color4'%} class = 'color4' {%endif%} 
+                {%if color3 == 'color3'%} class = 'color3' {%endif%} 
+                {%for i in range(num)%}
+                    <td class="color1 color3"></td>
+                    <td class="color2 color4"></td>
+                    {%endfor%}
+                </tr>
+                <tr>
+                    {%if color3 == 'color3'%} class = 'color3' {%endif%} 
+                    {%if color4 == 'color4'%} class = 'color4' {%endif%} 
+                    {%for i in range(num)%}
+                    <td class="color2 color4"></td>
+                    <td class="color1 color3"></td>
+                    {%endfor%}
+                </tr>
+            {%endfor%}    
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%load static%}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+            <form action="/create/person" method="post" class="form-group">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control"  name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="school">Location</label>
+                    <select name="school">
+                        <option value="sanjose">San Jose</option>
+                        <option value="burbank">Burbank</option>
+                        <option value="chicago">Chicago</option>
+                        <option value="online">Online</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="lang">Favorite Language</label>
+                    <select name="lang">
+                        <option value="python">Python</option>
+                        <option value="c">c</option>
+                        <option value="java">java</option>
+                        <option value="javascript">javascript</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="comments" class="form-label">Comments</label>
+                    <textarea name="comments" cols="10" rows="3"></textarea>
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <em><h1>{{book.title}}</h1></em>
+    <p>ID:{{book.id}}</p>
+    <p>Description:{{book.desc}}</p>
+    <h4>Authors:
+        <ul>
+            {% for i in book.Authors.all %}
+            <li>{{i.first_name}} {{i.last_name}}</li>
+            {%endfor%}
+            <form action="/create/relationship/{{book.id}}" method="post">
+                {% csrf_token %}
+                <select name="author" >
+                    {% for a in author %}
+                    {% if a not in book.Authors.all %}
+                    <option value='{{a.id}}'>{{a.first_name}} {{a.last_name}}</option>
+                    {%endif%}
+                    {%endfor%}
+                </select>
+                <button>submit</button>
+            </form>
+        </ul>
+    </h4>
+</body>
+</html>

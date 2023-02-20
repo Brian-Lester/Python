@@ -1,0 +1,55 @@
+
+h1{
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content:space-around ;
+}
+
+.list-group-item{
+    background-color: #34393E;
+    color: goldenrod;
+}
+.list-group{
+    background-color: #34393E;
+    padding: 5px;
+}
+
+.reg > h2, label{
+    background-color: #34393E;
+    color: #057AFE;
+}
+input{
+    margin: 5px,5px,5px,5px;
+}
+.reg ,.login {
+    background-color: #34393E;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 35%;
+    margin-top: 20px;
+}
+
+.login {
+    background-color: #34393E;
+    color: green;
+}
+.error{
+    color: red;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+.wrapper{
+    width: 970px;
+    margin: 0 auto;
+}
+.bottom{
+    display: flex;
+    justify-content: space-around;
+}

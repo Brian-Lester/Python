@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <div class="container">
+        <div class="reg">
+            <h2>Register</h2>
+        {% with errors = get_flashed_messages(category_filter=["regError"]) %}
+            {% if errors %}
+            <ul class="error">
+                {%- for msg in errors %}
+                <li class="error">{{ msg }}</li>
+                {% endfor -%}
+            </ul>
+            {% endif %}
+        {% endwith %}
+            <form action="/create/user" method="post" class="form-group">
+                <div class="mb-3">
+                    <label for="first_name" class="form-label">First name</label>
+                    <input type="text" class="form-control" placeholder="Jon" name="first_name">
+                </div>
+                <div class="mb-3">
+                    <label for="last_name" class="form-label">Last name</label>
+                    <input type="text" class="form-control" placeholder="Snow" name="last_name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="jonSnow@winterfell.com" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <div class="mb-3">
+                    <label for="confirm_password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirm_password">
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+        <div class="login">
+            <h2>Login</h2>
+        {% with errors = get_flashed_messages(category_filter=["error"]) %}
+            {% if errors %}
+            <ul class="error">
+                {%- for msg in errors %}
+                <li class="error">{{ msg }}</li>
+                {% endfor -%}
+            </ul>
+            {% endif %}
+        {% endwith %}
+            <form action="/login/user" method="post" class="form-group">
+                <div class="mb-3">
+                    <label for="email" class="form-label login">Email</label>
+                    <input type="email" class="form-control" placeholder="jonSnow@winterfell.com" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label login">Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+

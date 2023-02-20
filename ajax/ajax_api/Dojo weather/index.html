@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav">
+        <nav>
+            <h1>DojoWeather</h1>
+            <!-- <div class="nav_right"> -->
+                <ul>
+                    <a href="#"><li onclick=burbank() class="burbank">Burbank</li></a>
+                    <a href="#"><li onclick=chicago()>Chicago</li></a>
+                    <a href="#"><li onclick=dallas()>Dallas</li></a>
+                </ul>
+            <!-- </div> -->
+        </nav>
+    </div>
+    <div class="container">
+        <header>
+            <h2>San Jose</h2>
+            <div class="head_left">
+                <label for="tempview">show temperature in</label>
+                <select name="tempview" id="tempview" onchange="convert(this)">
+                    <option value="c">C</option>
+                    <option value="f">F</option>
+                </select>
+            </div>
+        </header>
+        <div class="main">
+            <div class="day today"><h3>Today</h3>
+                <img src="assets/some_rain.png" alt="some_rain" class="weather">
+                <p>some rain</p>
+                <div class="temp">
+                    <span class="test0">24</span>
+                    <span class="test1">18</span>
+                </div>
+            </div>
+            <div class="day tomorrow"><h3>Tomorrow</h3>
+                <img src="assets/some_sun.png" alt="some_sun" class="weather">
+                <p>some sun</p>
+                <div class="temp">
+                    <span class="test2">27</span>
+                    <span class="test3">19</span>
+                </div>
+            </div>
+            <div class="day tomorrow2"><h3>The day after Tomorrow </h3>
+                <img src="assets/some_clouds.png" alt="some_clouds"class="weather">
+                <p>some clouds</p>
+                <div class="temp">
+                    <span class="test4">21</span>
+                    <span class="test5">16</span>
+                </div>
+            </div>
+        </div>  
+        <div class="cookie">
+            <img src="assets/cookie.png" alt="cookie">
+            <div class="cookie_text">
+                <h2>Stop! Cookie time</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore cumque eligendi molestiae iusto. Mollitia provident delectus, expedita nam, dolore deleniti illo aut quae magnam est quaerat reiciendis nobis nihil velit!</p>
+            </div>
+            <button class="accept" onclick="remove()">I Accept</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

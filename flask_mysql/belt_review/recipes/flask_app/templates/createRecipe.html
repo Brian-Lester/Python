@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Recipe</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+</head>
+<body>
+    <nav>
+        <h1>Add a new recipe!</h1>
+        <a href="/dashboard">Back to recipes</a>
+        <a href="/logout">logout</a>
+    </nav>
+    <div class="container">
+        <div class="reg">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class="error"></ul>
+            {% for message in messages %}
+            <li class="error">{{message}}</li>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+            <form action="/save/recipe" method="post" class="form-group">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="description" cols="30" rows="10"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="instructions" class="form-label">instructions</label>
+                    <textarea name="instructions" cols="30" rows="10"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date Cooked/Made:</label>
+                    <input type="date" class="form-control" name="date">
+                </div>
+                <div class="mb-3">
+                    <h2>Under 30 minutes?</h2>
+                    <label for="under_30" class="form-label">Yes</label>
+                    <input type="radio" name="under_30" value="Yes">
+                    <label for="under_30" class="form-label">No</label>
+                    <input type="radio" name="under_30" 
+                    value="No" checked="checked">
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+    
+</body>
+</html>

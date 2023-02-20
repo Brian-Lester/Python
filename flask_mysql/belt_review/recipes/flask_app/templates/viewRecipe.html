@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Recipe</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <div class="left">
+                    <h1>Welcome,{{current_user.first_name}}</h1>
+                </div>
+                <div class="right">
+                    <a href="/dashboard">Back to recipes</a>
+                    <a href="/logout">logout</a>
+                </div>
+            </nav>
+            <div class="bottom">
+                <h2>Recipe name: {{r.name}}</h2>
+                <h5>Psted by: {{r.Creator}}</h5>
+            </div>
+        </header>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Description</th>
+                    <th scope="col">under 30</th>
+                    <th scope="col">instructions</th>
+                    <th scope="col">Date made</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{r.description}}</td>
+                    <td>{{r.under_30}}</td>
+                    <td>{{r.instructions}}</td>
+                    <td>
+                        {{r.date_made}}
+                    </td>
+                </tr>
+            </tbody>
+    </div>
+</body>
+</html>
+        
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game!!!!!!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Great guess!</h1>
+    {%if session['random'] == session ['num']%}
+    <div class="great_guess">
+        <h2>You're right!</h2>
+        <form action="/clear">
+            <button>Play again!</button>
+        </form>
+    </div>
+    {%elif session['random'] < session ['num'] %}
+    <div class="little_high">
+        <h2>Try again your guess was a little high</h2>
+        <form action="/count" method="post">
+            <input type="number"name="num">
+            <button>try again!</button>
+        </form>
+    </div>
+    {%elif session['random'] > session ['num'] %}
+    <div class="little_low">
+        <h2>Try again your guess was a little low</h2>
+        <form action="/count"method="post">
+            <input type="number"name="num">
+            <button>try again!</button>
+        </form>
+    </div>
+    {%endif%}
+</body>
+</html>

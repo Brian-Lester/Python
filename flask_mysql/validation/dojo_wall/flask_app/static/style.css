@@ -1,0 +1,65 @@
+
+h3{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.container{
+    width: 970px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.list-group-item{
+    background-color: #34393E;
+    color: goldenrod;
+}
+.list-group{
+    background-color: #34393E;
+    padding: 5px;
+}
+
+.reg > h2, label{
+    background-color: #34393E;
+    color: #057AFE;
+}
+input{
+    margin: 5px,5px,5px,5px;
+}
+.reg ,.login {
+    background-color: #34393E;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 35%;
+    margin-top: 20px;
+}
+
+.login {
+    background-color: #34393E;
+    color: green;
+}
+.error{
+    color: red;
+}
+.navbar > p {
+    color:white
+}
+.navbar{
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.container-dash{
+    width: 970px;
+    margin: 0 auto;
+}
+.posts{
+    display: flex;
+    justify-content: space-around;
+    background-color: #34393E;
+    padding: 5px;
+    margin: 10px;
+}

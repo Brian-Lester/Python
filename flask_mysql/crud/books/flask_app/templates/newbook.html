@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Books</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" ype= 'text/css' href="{{ url_for('static', filename='style.css') }}">
+        
+    </head>
+    <body>
+        <h1></h1>
+        <div class="container">
+            <div class="form-group col-md-4">
+                <h2>Add a Book</h2>
+                <form action="/create/book" method="post">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" name="title">
+                    <label for="num_of_pages">Number of pages</label>
+                    <input type="number"class='form-control' name='num_of_pages'>
+                    <button class="btn btn-primary">Submit</button>
+                </form>
+                <a href="/" class="btn btn-outline-primary">Home</a>
+            </div>
+            <div class="list-group col-md-4 col-md-offset-4">
+                <h2>Books</h2>
+                <ul class="list-group">
+                    {% for book in book %}
+                    <a href="/book/{{book.id}}"><li class="list-group-item">{{book.title}}</li></a>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </body>
+    </html>

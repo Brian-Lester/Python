@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+.form-group{
+    background-color: #34393E;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.list-group-item{
+    background-color: #34393E;
+    color: goldenrod;
+}
+.list-group{
+    background-color: #34393E;
+    padding: 5px;
+}
+
+h2, label{
+    background-color: #34393E;
+    color: #057AFE;
+}
+input{
+    margin: 20px 0px 20px 0px;
+}
+.new-user{
+    vertical-align: bottom;
+}
+.error{
+    color:red
+}

@@ -1,0 +1,15 @@
+html{
+    background-color: black;
+}
+.container{
+    background-color:#00464E ;
+    border: 2px solid white;
+    width:400px;
+    margin:0 auto;
+    height: 200px;
+}
+p{
+    color: white;
+    text-align: center;
+    margin-top: 90px;
+}

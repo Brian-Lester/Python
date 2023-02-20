@@ -1,0 +1,11 @@
+SELECT * FROM names_schema.names;
+INSERT into names (first_name, last_name, email) 
+VALUES("Brian","Lester","randoemail@gmail.com"),("Megan","Lester","randoemail@gmail.com"),("Annabel","Lester","randoemail@gmail.com");
+Update names set email ="aaaaa@gmail.com" where id = 9;
+Update names set email ="baby@gmail.com" where id = 10;
+Select * from names where email = "randoemail@gmail.com";
+Select * from names where id = 10;
+Update names SET last_name = "pancakes" WHERE id = 10;
+Delete from names WHERE id = 9;
+SELECT * from names ORDER BY first_name;
+SELECT * from names ORDER BY first_name desc;

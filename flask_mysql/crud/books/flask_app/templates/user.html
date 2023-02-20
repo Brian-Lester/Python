@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" ype= 'text/css' href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Favorites</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for i in user.books %}
+            <tr>
+                <td>{{i.title}} {{i.num_of_pages}}</td>
+                <td>
+                    <div class="btn-group" role="group" >
+                    </div>
+                </td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+    <form action="/create/relationship" method ="post">
+        <input type="hidden" name='user' value="{{user.id}}">
+        <select name="book" value>
+            {% for book in book %}
+            <option value="{{book.id}}"> {{book.title}}</option>
+            {% endfor %}
+        </select>
+        <button>Submit</button>
+    </form>
+    <a href="/" class="btn btn-outline-primary">Home</a>
+    
+</body>
+</html>
